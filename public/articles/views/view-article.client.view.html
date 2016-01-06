@@ -1,0 +1,41 @@
+<!-- The article view -->
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+    <a href="/#!/" style="color:white"><h1>Sizzle</h1></a>
+    <label style="color:white">First Name : </Label> <label data-ng-bind="article.firstName" style="color:white"></label>
+    <br>
+    <label style="color:white">Last Name : </Label>
+    <label data-ng-bind="article.lastName" style="color:white"></label>
+    <br>
+    <label style="color:white">Contact Number : </Label>
+    <label data-ng-bind="article.contactNumber" style="color:white"></label>
+    <br>
+    <label style="color:white">E-mail address : </Label>
+    <label data-ng-bind="article.email" style="color:white"></label>
+    <br>
+    <label style="color:white">Product / Service : </Label>
+    <label data-ng-bind="article.product" style="color:white"></label>
+    <br>
+    <label style="color:white">Additional Notes : </Label>
+    <label data-ng-bind="article.additionalNotes" style="color:white"></label>
+    <br>
+    <label style="color:white">Contacted Notes : </Label>
+    <label data-ng-bind="article.contactNotes" style="color:white"></label>
+    <br>
+    <!-- Show the editing buttons to the sizlet creator -->
+    <div data-ng-show="authentication.user._id == article.creator._id">
+        <a href="/#!/articles/{{article._id}}/edit" style="color:white">Action this sizzle</a>
+        <br>
+        <a href="#" data-ng-click="delete();" style="color:white">Done with this Sizzle</a>
+    </div>
+    <br>
+
+    <small>
+        <em style="color:white">Posted on</em>
+        <em data-ng-bind="article.created | date:'mediumDate'" style="color:white"></em>
+        <em style="color:white">by</em>
+        <em data-ng-bind="article.creator.fullName" style="color:white"></em>
+    </small>
+    <br>
+    <a href="/#!/articles" style="color:white">List Sizzles</a>
+
+</section>

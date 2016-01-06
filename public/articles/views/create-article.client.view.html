@@ -1,0 +1,57 @@
+<!-- The create article view -->
+<section data-ng-controller="ArticlesController">
+<a href="/#!/" style="color:white"><h1>Sizzle</h1></a>
+	<h1 style="color:white">New Sizzle</h1>
+
+	<!-- The new article form -->
+	<form data-ng-submit="create()" novalidate>
+		<div>
+		 <label for="firstName" style="color:white">First Name</label>
+	<div>
+		 <input type="text" data-ng-model="firstName" id="firstName" placeholder="FirstName" required>
+ </div>
+</div>
+
+<div>
+	<label for="lastName" style="color:white">Last Name</label>
+<div>
+	<input type="text" data-ng-model="lastName" id="lastName" placeholder="LasttName" required>
+</div>
+</div>
+
+<div>
+	<label for="contactNumber" style="color:white">Contact Number</label>
+<div>
+	<input type="text" data-ng-model="contactNumber" id="contactNumber" placeholder="Contact Number" required>
+</div>
+</div>
+
+<div>
+	<label for="email" style="color:white">E Mail</label>
+<div>
+	<input type="text" data-ng-model="email" id="email" placeholder="myname@provider.co.za" required>
+</div>
+</div>
+
+<div>
+	<label for="product" style="color:white">Product/Service</label>
+<div>
+	<input type="text" data-ng-model="product" id="product" placeholder="Product" required>
+</div>
+</div>
+
+<div>
+				<label for="additionalNotes" style="color:white">Additional Notes</label>
+				<div>
+<textarea data-ng-model="additionalNotes" id="additionalNotes" cols="30" rows="10" placeholder="Prefered method of contact and time"></textarea>
+				</div>
+			</div>
+			<div>
+			<input type="submit">
+		</div>
+		<!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+</section>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Use the 'title' property to render a page title  -->
+	<title>Sizzlet</title>
+</head>
+<body background="/images/sizzlet.png">
+  	<!-- Display flash messages  -->
+	<% for(var i in messages) { %>
+	   <div class="flash"><%= messages[i] %></div>
+	<% } %>
+
+	<!-- Render the signin form  -->
+	<form action="/signin" method="post">
+		<div>
+			<label style="color:white">Username:</label>
+			<input type="text" name="username" />
+		</div>
+		<div>
+			<label style="color:white">Password	:</label>
+			<input type="password" name="password" />
+		</div>
+		<div>
+			<input type="submit" value="Sign In" />
+		</div>
+	</form>
+
+	<!-- Render the OAuth authentication links  -->
+	<a href="/oauth/facebook" style="color:white">Sign in with Facebook</a>
+	<br>
+	<a href="/oauth/twitter" style="color:white">Sign in with Twitter</a>
+  <br>
+	<a href="/oauth/google" style="color:white">Sign in with Google</a>
+</body>
+</html>

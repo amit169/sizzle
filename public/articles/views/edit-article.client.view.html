@@ -1,0 +1,56 @@
+<!-- The edit article view -->
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+	<a href="/#!/" style="color:white">Sizzle</a>
+	<h1 style="color:white">Action/Update Sizzle</h1>
+	<!-- The edited article form -->
+	<form data-ng-submit="update()" novalidate>
+		<div>
+			<label for="firstName" style="color:white">First Name</label>
+			<div>
+				<input type="text" data-ng-model="article.firstName" id="firstName" placeholder="FirstName" required>
+			</div>
+		</div>
+		<div>
+			<label for="lastName" style="color:white">Last Name</label>
+			<div>
+				<input type="text" data-ng-model="article.lastName" id="lastName" placeholder="LastName" required>
+			</div>
+		</div>
+		<div>
+			<div>
+				<label for="contactNumber" style="color:white">Contact Number</label>
+				<div>
+					<input type="text" data-ng-model="article.contactNumber" id="contactNumber" placeholder="ContactNumber" required>
+				</div>
+			</div>
+			<div>
+				<label for="email" style="color:white">Email</label>
+				<div>
+					<input type="text" data-ng-model="article.email" id="email" placeholder="Email" required>
+				</div>
+			</div>
+			<div>
+				<label for="product" style="color:white">Product / Service</label>
+				<div>
+					<input type="text" data-ng-model="article.product" id="product" placeholder="Product" required>
+				</div>
+			</div>
+			<label for="additionalNotes" style="color:white">Additional Notes</label>
+			<div>
+				<textarea data-ng-model="article.additionalNotes" id="additionalNotes" cols="30" rows="10" placeholder="AdditionalNotes"></textarea>
+			</div>
+			<label for="contacted" style="color:white">contact Notes</label>
+			<div>
+				<textarea data-ng-model="article.contactNotes" id="contactNotes" cols="30" rows="5" placeholder="status of action"></textarea>
+			</div>
+		</div>
+		<div>
+			<input type="submit" value="Update">
+		</div>
+		<!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+	</div>
+</section>
